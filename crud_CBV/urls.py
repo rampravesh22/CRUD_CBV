@@ -19,7 +19,7 @@ from enroll import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('',views.UserAddAndShow.as_view(),name='addadnshow'),
+    path('',views.UserAddAndShow.as_view(),name='addandshow'),
     path("delete/<int:id>/", views.DeleteData.as_view(), name="deletedata"),
-    path("<int:id>/", views.update_data, name="updatedata"),
+    path("<int:id>/", views.UpdateStudent.as_view(), name="updatedata"),
 ]
