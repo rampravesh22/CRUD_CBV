@@ -53,6 +53,7 @@ class UpdateStudent(View):
     def post(self, request, id):
         pi = User.objects.get(pk=id)
         fm = StudentRegistration(request, instance=pi)
+        print()
         if fm.is_valid():
             fm.save()
         return render(request, "enroll/updatestudent.html", {"form": fm, "stu": pi})
