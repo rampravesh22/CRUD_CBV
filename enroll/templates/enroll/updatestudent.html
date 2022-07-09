@@ -1,0 +1,41 @@
+{% extends 'enroll/base.html' %}
+{% block content %}
+{% comment %} Update data by using below form {% endcomment %}
+<div class="row">
+  <div class="col-sm-8 offset-2">
+    <h4 class="alert alert-info">Update Student Information</h4>
+    <form action="" method="post">
+      {% csrf_token %} {{form.as_p}}
+      <button type="submit" class="btn btn-success">Update</button>
+    </form>
+  </div>
+</div>
+{% comment %} Show the updated data {% endcomment %}
+<div class="row">
+  <div class="col-sm-8 offset-2 mt-5">
+    <h4 class="text-center alert alert-info">Updated Student Information</h4>
+    <table class="table table-warning">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Eamil</th>
+          <th scope="col">Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{stu.id}}</th>
+          <td>{{ stu.name }}</td>
+          <td>{{stu.email}}</td>
+          <td>{{stu.password}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center">
+    <a href="{% url 'addandshow' %}" class="btn btn-info">Back to Home</a>
+  </div>
+</div>
+
+{% endblock content %}

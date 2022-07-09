@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'enroll/css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'enroll/css/core.css' %}" />
+  </head>
+  <body>
+    <div class="conatainer mt-5 p-5">
+      <h2 class="text-center alert alert-primary">
+        Function Based view Model Form
+      </h2>
+      {% block content %} {% endblock content %}
+    </div>
+    <script src="{% static 'enroll/js/all.min.js' %}"></script>
+    <script src="{% static 'enroll/js/boostrap.js' %}"></script>
+    <script src="{% static 'enroll/js/jquery.js' %}"></script>
+    <script src="{% static 'enroll/js/popper.js' %}"></script>
+  </body>
+</html>
