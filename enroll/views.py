@@ -44,8 +44,10 @@ class UserAddAndShow(TemplateView):
 #     return render(request, "enroll/addandshow.html", {"form": fm, "stu": stud})
 
 
-# this function will edit or update data
 
+
+
+# this function will edit or update data
 def update_data(request, id):
     if request.method == "POST":
         pi = User.objects.get(pk=id)
