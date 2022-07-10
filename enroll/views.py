@@ -47,13 +47,12 @@ class UserAddAndShow(TemplateView):
 class UpdateStudent(View):
     def get(self, request, id):
         pi = User.objects.get(pk=id)
-        fm = StudentRegistration(request.POST, instance=pi)
-        return render(request,"enroll/updatestudent.html", {"form": fm})
+        fm = StudentRegistration(instance=pi)
+        return render(request, "enroll/updatestudent.html", {"form": fm})
 
     def post(self, request, id):
         pi = User.objects.get(pk=id)
-        fm = StudentRegistration(request, instance=pi)
-        print()
+        fm = StudentRegistration(request.POST, instance=pi)
         if fm.is_valid():
             fm.save()
         return render(request, "enroll/updatestudent.html", {"form": fm, "stu": pi})
